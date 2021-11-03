@@ -2,7 +2,7 @@
 
 namespace EstudosPOO
 {
-    public class Aalimento
+    public class Alimento
     {
         public string Nome { get; set; }
         public double Preco { get; set; }
@@ -11,7 +11,7 @@ namespace EstudosPOO
         public string Unidade { get; set; }
         public double Calorias { get; set; }
 
-        public Alimento(string nome, double preco, double custo, string tipo, string unidade, double calorias)
+        public Alimento(string nome, double preco, string tipo, string unidade, double calorias)
         {
             Nome = nome;
             Preco = preco;
@@ -40,7 +40,7 @@ namespace EstudosPOO
     {
         private const string TIPO = "Fruta";
         private const string UNIDADE = "Kg";
-        public Fruta(string nome, double calorias, double preco) : base(nome, TIPO, calorias, preco, UNIDADE)
+        public Fruta(string nome, double calorias, double preco) : base(nome, preco, TIPO, UNIDADE, calorias)
         {
 
         }
@@ -48,9 +48,9 @@ namespace EstudosPOO
 
     public class Banana : Fruta
     {
-        private string const NOME = "Baanana";
-        private double const CALORIA = 120;
-        private double const PRECO = 1.50;
+        private const string NOME = "Baanana";
+        private const double CALORIA = 120;
+        private const double PRECO = 1.50;
 
         public Banana() : base(NOME, CALORIA, PRECO)
         {
@@ -60,9 +60,9 @@ namespace EstudosPOO
 
     public class Morango : Fruta
     {
-        private string const NOME = "Morango";
-        private double const CALORIA = 100;
-        private double const PRECO = 3.60;
+        private const string NOME = "Morango";
+        private const double CALORIA = 100;
+        private const double PRECO = 3.60;
 
         public Morango() : base(NOME, CALORIA, PRECO)
         {

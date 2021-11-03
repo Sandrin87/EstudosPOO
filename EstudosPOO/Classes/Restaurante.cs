@@ -9,14 +9,14 @@ namespace EstudosPOO
 		public string DonoRestaurante { get; set; }
 		public List<PratoDeComida> Cardapio { get; set; }
 
-		public abstract List<string> PratosDisponiveis() { }
+		public abstract List<string> PratosDisponiveis();
 	}
 
 	public class Buffet : Restaurante
 	{
 		private MixDeFrutas prato = new MixDeFrutas();
 
-		public Buffet(string nomeRestaurante, string donoRestaurante, List<string> cardapio)
+		public Buffet(string nomeRestaurante, string donoRestaurante, List<PratoDeComida> cardapio)
         {
 			NomeRestaurante = nomeRestaurante;
 			DonoRestaurante = donoRestaurante;
@@ -25,7 +25,7 @@ namespace EstudosPOO
 
         public override List<string> PratosDisponiveis()
         {
-			return prato.Nome;
+			return new List<string>() {prato.NomePrato};
         }
     }
 }

@@ -8,41 +8,41 @@ namespace EstudosPOO
         public string NomePrato { get; set; }
         public double ValorPrato { get; set; }
         public bool PratoVegano { get; set; }
-        public Dictionary<string, Alimento> Ingredientes { get; set; }
+        public Dictionary<string, Fruta> Ingredientes { get; set; }
 
-        public PratoDeComida(string nomePrato, bool pratoVegano, Dictionary<string, Alimento> ingredientes)
+        public PratoDeComida(string nomePrato, bool pratoVegano, Dictionary<string, Fruta> ingredientes)
         {
             NomePrato = nomePrato;
             PratoVegano = pratoVegano;
             Ingredientes = ingredientes;
         }
 
-        public virtual void SetValorPrato(Dictionary<string, Alimento> ingredientes)
+        public virtual void SetValorPrato(Dictionary<string, Fruta> ingredientes)
         {
-            ValorPrato += 1.5 * ingredientes.Count();
+            ValorPrato += 1.5 * ingredientes.Count;
         }
     }
 
     public class MixDeFrutas : PratoDeComida
     {
         //descobrir como chamar as classes
-        private Banana banana = new Banana();
-        private Morango morango = new Morango();
+        private static Banana banana = new Banana();
+        private static Morango morango = new Morango();
 
         private const string NOME_DO_PRATO = "MixDeFrutas";
         private const bool PRATO_VEGANO = true;
-        private const Dictionary<string, Alimento> INGREDIENTES = { { banana.Nome, banana }, { morango.Nome, morango } };
+        private static Dictionary<string, Fruta> INGREDIENTES = new Dictionary<string, Fruta>() { { banana.Nome, banana }, { morango.Nome, morango } };
 
         public MixDeFrutas() : base(NOME_DO_PRATO, PRATO_VEGANO, INGREDIENTES)
         {
 
         }
 
-        public override void SetValorPrato(Dictionary<string, Alimento> ingredientes)
+        public override void SetValorPrato(Dictionary<string, Fruta> ingredientes)
         {
-            foreach (Dictionary<string, Alimento> entry in ingredientes)
+            foreach (KeyValuePair<string, Fruta> entry in ingredientes)
             {
-                if (entry.ContainsKey("Mornago"))
+                if (entry.Key == "Mornago")
                 {
                     ValorPrato += 4.5;
                 }
