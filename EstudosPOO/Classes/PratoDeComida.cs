@@ -35,7 +35,7 @@ namespace EstudosPOO
 
         public MixDeFrutas() : base(NOME_DO_PRATO, PRATO_VEGANO, INGREDIENTES)
         {
-
+            SetValorPrato(INGREDIENTES);
         }
 
         public override void SetValorPrato(Dictionary<string, Fruta> ingredientes)

@@ -10,18 +10,26 @@ namespace EstudosPOO
 		public List<PratoDeComida> Cardapio { get; set; }
 
 		public abstract List<string> PratosDisponiveis();
+
+		public abstract List<PratoDeComida> SetPratoComida();
 	}
 
 	public class Buffet : Restaurante
 	{
 		private MixDeFrutas prato = new MixDeFrutas();
+		
 
-		public Buffet(string nomeRestaurante, string donoRestaurante, List<PratoDeComida> cardapio)
+		public Buffet(string nomeRestaurante, string donoRestaurante)
         {
 			NomeRestaurante = nomeRestaurante;
 			DonoRestaurante = donoRestaurante;
-			Cardapio = cardapio;
+			Cardapio = SetPratoComida();
         }
+
+		public override List<PratoDeComida> SetPratoComida()
+		{
+			return new List<PratoDeComida>() {prato};	
+		}
 
         public override List<string> PratosDisponiveis()
         {

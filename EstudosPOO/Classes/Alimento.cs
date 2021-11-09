@@ -40,6 +40,7 @@ namespace EstudosPOO
     {
         private const string TIPO = "Fruta";
         private const string UNIDADE = "Kg";
+
         public Fruta(string nome, double calorias, double preco) : base(nome, preco, TIPO, UNIDADE, calorias)
         {
 
@@ -48,7 +49,7 @@ namespace EstudosPOO
 
     public class Banana : Fruta
     {
-        private const string NOME = "Baanana";
+        private const string NOME = "Banana";
         private const double CALORIA = 120;
         private const double PRECO = 1.50;
 
