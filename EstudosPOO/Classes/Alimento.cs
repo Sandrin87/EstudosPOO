@@ -2,7 +2,7 @@
 
 namespace EstudosPOO
 {
-    public class Alimento
+    public abstract class Alimento
     {
         public string Nome { get; set; }
         public double Preco { get; set; }
@@ -20,11 +20,6 @@ namespace EstudosPOO
             Calorias = calorias;
         }
 
-        public void SetCusto(double quantidade)
-        {
-            Custo += Preco * quantidade;
-        }
-
         public double GetCustoCompra(double quantidade)
         {
             return Preco * quantidade;
@@ -36,7 +31,16 @@ namespace EstudosPOO
         }
     }
 
-    public class Fruta : Alimento
+    public class Geladeira
+    {
+        public void Congelar(Fruta frutaNaoCongelada)
+        {
+            
+        }
+
+    }
+
+    public abstract class Fruta : Alimento
     {
         private const string TIPO = "Fruta";
         private const string UNIDADE = "Kg";

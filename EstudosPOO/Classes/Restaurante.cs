@@ -9,8 +9,6 @@ namespace EstudosPOO
 		public string DonoRestaurante { get; set; }
 		public List<PratoDeComida> Cardapio { get; set; }
 
-		public abstract List<string> PratosDisponiveis();
-
 		public abstract List<PratoDeComida> SetPratoComida();
 	}
 
@@ -30,10 +28,5 @@ namespace EstudosPOO
 		{
 			return new List<PratoDeComida>() {prato};	
 		}
-
-        public override List<string> PratosDisponiveis()
-        {
-			return new List<string>() {prato.NomePrato};
-        }
     }
 }

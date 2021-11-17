@@ -6,7 +6,10 @@ namespace EstudosPOO
     {
         static void Main(string[] args)
         {
-
+            /***************************************************
+            *   Repositorio para estudo
+            *   https://github.com/FernandoVendramin/OOP.Studies
+            ***************************************************/
 
             Buffet restaurante = new Buffet("Buffet Girafas", "Gabriel Sandrin");
             

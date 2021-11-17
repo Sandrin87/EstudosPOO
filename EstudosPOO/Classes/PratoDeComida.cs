@@ -25,7 +25,6 @@ namespace EstudosPOO
 
     public class MixDeFrutas : PratoDeComida
     {
-        //descobrir como chamar as classes
         private static Banana banana = new Banana();
         private static Morango morango = new Morango();
 
